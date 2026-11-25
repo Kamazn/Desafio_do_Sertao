@@ -110,7 +110,6 @@ int mostrarHistoria() {
         return 0;
     }
 
-
     printf("\n=== COMO JOGAR ===\n");
     while (fgets(linha, 200, arquivo)) {
         printf("%s", linha);
@@ -130,7 +129,7 @@ int salvarResultado() {
     fprintf(arquivo, "Jogador: %s", jogador.nome);
     fprintf(arquivo, "Acertos: %d\n", jogador.resultado.acertos);
     fprintf(arquivo, "Pontos: %d\n\n", jogador.resultado.pontos);
-
+    
     fclose(arquivo);
     printf("Resultado salvo em ranking.txt.\n");
     return 0;
