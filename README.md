@@ -4,46 +4,30 @@ Jogo de perguntas e respostas em C, no terminal, com o Nordeste como tema. O jog
 
 ## Arquivos
 
-- `main.c`: código-fonte do jogo.
+- `desafiosertao.c`: código-fonte do jogo.
 - `historia.txt`: introdução e instruções, lidas quando uma partida começa.
 - `ranking.txt`: criado pelo jogo para guardar nome, acertos e pontos de cada partida. Os resultados são acrescentados sem apagar os anteriores.
 
-## Como compilar
+## Como compilar e executar
 
-Esta versão foi feita para **Windows**, pois usa `system("cls")` para limpar a tela e `system("pause")` para esperar uma tecla. É necessário ter um compilador C instalado, como o GCC/MinGW.
+O jogo foi feito para **Windows**. Use o Code::Blocks com GCC ou tenha o GCC instalado para compilar pelo terminal.
 
-### Pelo terminal
+### Code::Blocks
 
-Abra o PowerShell ou o Prompt de Comando na pasta que contém `main.c` e `historia.txt` e compile:
+1. Crie um projeto **Console application** em **C** e cole o conteúdo de `desafiosertao.c` no arquivo principal do projeto.
+2. Coloque `historia.txt` na pasta do projeto.
+3. Pressione **F9** para compilar e jogar.
 
-```bash
-gcc -std=c99 -Wall -Wextra main.c -o desafio.exe
-```
+### Terminal ou VS Code
 
-No PowerShell, execute:
+Abra o terminal na pasta de `desafiosertao.c` e `historia.txt`. No VS Code, use **Terminal > New Terminal**. Compile e execute:
 
 ```powershell
-.\desafio.exe
+gcc -std=c99 desafiosertao.c -o desafiosertao.exe
+.\desafiosertao.exe
 ```
 
-No Prompt de Comando:
-
-```bat
-desafio.exe
-```
-
-Execute a partir dessa pasta para que o jogo encontre `historia.txt` e grave `ranking.txt` nela. O GCC precisa estar disponível no terminal para usar o comando acima.
-
-### Pelo Code::Blocks
-
-1. Crie um projeto em **File > New > Project > Console application** e escolha **C** e o compilador **GNU GCC Compiler**.
-2. Substitua o `main.c` do projeto pelo deste repositório.
-3. Copie `historia.txt` para a pasta do projeto, junto do arquivo `.cbp`.
-4. Em **Project > Build options > Compiler settings > Other compiler options**, adicione `-std=c99` para permitir a declaração de `int i` no `for`.
-5. Confira em **Project > Properties > Build targets > Execution working dir** se a pasta de execução é a que contém `historia.txt`.
-6. Pressione **F9 (Build and Run)** para compilar e executar.
-
-O Code::Blocks precisa estar com o GCC instalado e configurado. O arquivo `historia.txt` deve existir na pasta de execução antes de começar a partida.
+No Prompt de Comando, use `desafiosertao.exe` para executar. Esta versão usa `cls` e `pause`, comandos do Windows.
 
 ## Como jogar
 
@@ -82,3 +66,4 @@ As funções dividem as tarefas:
 - Laços de repetição com `for`, `do/while` e `while`.
 - Leitura de arquivo com `fopen`, `fgets` e `fclose`.
 - Gravação de resultados com `fopen`, `fprintf` e `fclose`.
+As duas funções de arquivo verificam se a abertura retornou `NULL`. Se houver falha, mostram uma mensagem e encerram a função antes de usar o arquivo.
