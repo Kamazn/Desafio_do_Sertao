@@ -10,7 +10,11 @@ Jogo de perguntas e respostas em C, no terminal, com o Nordeste como tema. O jog
 
 ## Como compilar
 
-É necessário ter um compilador C, como o GCC. Abra o terminal na pasta do projeto e execute:
+É necessário ter um compilador C, como o GCC.
+
+1. Aqui no GitHub, clique em **Code > Download ZIP** para baixar o projeto.
+2. Extraia o ZIP e abra a pasta extraída que contém `desafiosertao.c` e `historia.txt`.
+3. Abra o terminal nessa pasta e execute:
 
 ```bash
 gcc -std=c99 desafiosertao.c -o desafiosertao
@@ -28,7 +32,7 @@ No Linux ou macOS:
 ./desafiosertao
 ```
 
-Execute o jogo a partir da pasta que contém `historia.txt`. O arquivo `ranking.txt` será criado nessa mesma pasta.
+Compile e execute dentro dessa pasta extraída. O jogo lê `historia.txt` e cria `ranking.txt` nela.
 
 As pausas e a limpeza da tela usam `pause` e `cls`, comandos do Windows. No Linux e no macOS, esses comandos não estão disponíveis por padrão; essa parte precisa de adaptação para funcionar como no Windows.
 
@@ -75,4 +79,9 @@ As funções dividem as tarefas:
 - Laços de repetição com `for`, `do/while` e `while`.
 - Leitura de arquivo com `fopen`, `fgets` e `fclose`.
 - Gravação de resultados com `fopen`, `fprintf` e `fclose`.
+
 As duas funções de arquivo verificam se a abertura retornou `NULL`. Se houver falha, mostram uma mensagem e encerram a função antes de usar o arquivo.
+
+## Autoria
+
+Projeto desenvolvido individualmente, sem participação em grupo.
