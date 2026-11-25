@@ -8,26 +8,35 @@ Jogo de perguntas e respostas em C, no terminal, com o Nordeste como tema. O jog
 - `historia.txt`: introdução e instruções, lidas quando uma partida começa.
 - `ranking.txt`: criado pelo jogo para guardar nome, acertos e pontos de cada partida. Os resultados são acrescentados sem apagar os anteriores.
 
-## Como compilar e executar
+## Como compilar
 
-O jogo foi feito para **Windows**. Use o Code::Blocks com GCC ou tenha o GCC instalado para compilar pelo terminal.
+É necessário ter um compilador C, como o GCC. Abra o terminal na pasta do projeto e execute:
 
-### Code::Blocks
+```bash
+gcc -std=c99 desafiosertao.c -o desafiosertao
+```
 
-1. Crie um projeto **Console application** em **C** e cole o conteúdo de `desafiosertao.c` no arquivo principal do projeto.
-2. Coloque `historia.txt` na pasta do projeto.
-3. Pressione **F9** para compilar e jogar.
-
-### Terminal ou VS Code
-
-Abra o terminal na pasta de `desafiosertao.c` e `historia.txt`. No VS Code, use **Terminal > New Terminal**. Compile e execute:
+No Windows:
 
 ```powershell
-gcc -std=c99 desafiosertao.c -o desafiosertao.exe
 .\desafiosertao.exe
 ```
 
-No Prompt de Comando, use `desafiosertao.exe` para executar. Esta versão usa `cls` e `pause`, comandos do Windows.
+No Linux ou macOS:
+
+```bash
+./desafiosertao
+```
+
+Execute o jogo a partir da pasta que contém `historia.txt`. O arquivo `ranking.txt` será criado nessa mesma pasta.
+
+As pausas e a limpeza da tela usam `pause` e `cls`, comandos do Windows. No Linux e no macOS, esses comandos não estão disponíveis por padrão; essa parte precisa de adaptação para funcionar como no Windows.
+
+### Code::Blocks
+
+1. Crie um projeto **Console application** em **C** e cole o conteúdo de `desafiosertao.c` no arquivo principal.
+2. Coloque `historia.txt` na pasta do projeto.
+3. Pressione **F9** para compilar e jogar.
 
 ## Como jogar
 
